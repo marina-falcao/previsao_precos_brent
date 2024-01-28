@@ -1,6 +1,8 @@
 # Previsão de preços do petróleo Brent
 
-Criação de um modelo de ML que faça a previsão do preço do petróleo Brent diariamente, além de um dashboard interativo para apresentar insights relevantes sobre a variação do preço do petróleo, como situações geopolíticas, crises econômicas, demanda global por energia, etc.
+Criação de um modelo de ML que faça a previsão do preço do petróleo Brent diariamente, além de um dashboard interativo para apresentar insights relevantes sobre a variação do preço do petróleo, como situações geopolíticas, crises econômicas, demanda global por energia, etc. 
+
+A aplicação em Streamlit fornece a previsão do preço do petróleo em data escolhida pelo usuário, considerando aproximadamente 60 dias da data atual. 
 
 # Tecnologias
 * Análise: Google Colab / Python / Pandas
