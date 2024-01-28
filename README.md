@@ -10,8 +10,18 @@ Criação de um modelo de ML que faça a previsão do preço do petróleo Brent 
 
 # Getting started
 
-1. Instale o arquivo requirements.txt:
+1. Baixar o arquivo
+
+3. Instale o arquivo requirements.txt:
 
 `pip install -r requirements.txt`
 
+2. 
 
+3. Rodar o arquivo pipeline.py:
+
+`python .\pipeline.py`
+
+4. Rodar o arquivo streamlit.py:
+
+`python .\streamlit.py`
