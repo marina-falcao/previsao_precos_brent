@@ -8,10 +8,9 @@ Criação de um modelo de ML que faça a previsão do preço do petróleo Brent 
 * Dashboard: Power BI
 * MVP: Streamlit
 
-# Entregáveis
+# Getting started
 
-* Notebook de análise
-* Código da pipeline
-* Dashboard PBI
-* Arquivos: brent_petroleo.csv (dataframe), brent.joblib (modelo)
-* Código MVP do modelo em produção usando o Streamlit.
+Instale o arquivo requirements.txt:
+'pip install -r requirements.txt'
+
+
