@@ -4,24 +4,36 @@ Criação de um modelo de ML que faça a previsão do preço do petróleo Brent 
 
 # Tecnologias
 * Análise: Google Colab / Python / Pandas
-* Pipeline: python
+* Pipeline: Python
 * Dashboard: Power BI
 * MVP: Streamlit
 
 # Getting started
 
-1. Baixar o arquivo
+1. Baixar o repositório do projeto - download ZIP. Isso cria a pasta **previsao_precos_brent_main**. Descompactar a pasta.
+   
+2. Abrir a pasta **previsao_precos_brent_main**.
 
-3. Instale o arquivo requirements.txt:
+3. Criar virtual environment no diretório escolhido:
+
+`python -m venv meu_env`
+   
+4. Ativar o virtual environment:
+
+`.\meu_env\Scripts\activate`
+
+5. Instalar os requisitos necessários para o projeto:
 
 `pip install -r requirements.txt`
 
-2. 
-
-3. Rodar o arquivo pipeline.py:
+6. Rodar o arquivo pipeline.py:
 
 `python .\pipeline.py`
 
-4. Rodar o arquivo streamlit.py:
+7. Rodar o arquivo streamlit.py:
 
-`python .\streamlit.py`
+`streamlit run streamlit.py`
+
+8. A aplicação estará no endereço:
+
+{IP da máquina}:8501
