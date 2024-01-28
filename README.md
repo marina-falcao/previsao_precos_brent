@@ -11,6 +11,6 @@ Criação de um modelo de ML que faça a previsão do preço do petróleo Brent 
 # Getting started
 
 Instale o arquivo requirements.txt:
-'pip install -r requirements.txt'
+'''pip install -r requirements.txt
 
 
