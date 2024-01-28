@@ -5,8 +5,8 @@ from datetime import datetime
 
 def ler_arquivo(file_path):
   df = pd.read_parquet(file_path)
-  df.info()
-  #print(df)
+  #df.info()
+  print(df)
   return df
     
 # Function to handle the prediction process

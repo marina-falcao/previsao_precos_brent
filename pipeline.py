@@ -7,6 +7,8 @@ from statsforecast import StatsForecast
 from statsforecast.models import AutoARIMA
 import requests
 from bs4 import BeautifulSoup
+from dateutil.relativedelta import relativedelta
+
 
 
 url='http://www.ipeadata.gov.br/ExibeSerie.aspx?module=m&serid=1650971490&oper=view'
@@ -56,6 +58,8 @@ class TimeSeriesForecasting:
         self.treino = df.loc[df['ds'] < data_inicio]
         self.valid = df.loc[df['ds'] >= data_inicio]
         self.h = self.valid.index.nunique()
+        print(self.treino)
+        print(self.valid)
 
     def treina_modelo(self, season_length):
         self.model = StatsForecast(models=[AutoARIMA(season_length=30)], freq='D', n_jobs=-1)
@@ -100,7 +104,7 @@ class DataPipeline:
         #self.forecaster.orquestracao(df, nome_arquivo, data_inicio, periods, season_length)
 
 
-    def run_pipeline(self, parquet_file, data_inicio, periods):
+    def run_pipeline(self, parquet_file, periods):
         # Extraction
         df = self.extractor.extracao(url)
         self.extractor.salva_parquet(df, parquet_file)
@@ -113,10 +117,13 @@ class DataPipeline:
         # Transformation
         df = self.transformer.transformacao(df)
         print('transformacao')
+        date_max = df['ds'].max()
+        data_inicio = date_max - relativedelta(month=1)
 
         # Forecasting and Model Saving
         self.forecaster.orquestracao(df, data_inicio, periods)
-        print('orquestracao')
+        #print('orquestracao')
+        
 
     # Function to handle the prediction process
     def predict_oil_price(self, prediction_date):
@@ -132,4 +139,4 @@ class DataPipeline:
             return None
         
 dt_pipe =DataPipeline()
-dt_pipe.run_pipeline("df_transf.parquet", '2023-12-05', 60)
+dt_pipe.run_pipeline("df_transf.parquet", 60)
